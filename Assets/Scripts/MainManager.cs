@@ -57,7 +57,8 @@ public class MainManager : MonoBehaviour {
     }
 
     public void DownloadImage(string url)
-	{
+    {
+        PrintButton.gameObject.SetActive(false);
         string photoUrl = url;
         resultText.text = "BarCode Scanned";
         StartCoroutine(WebRequestManager.Instance.DownloadImage(photoUrl, DownloadImageSuccessCallback, DownloadImageFailCallback));
